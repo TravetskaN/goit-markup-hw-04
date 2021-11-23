@@ -101,6 +101,8 @@ img {
   color: var(--accent-color);
 }
 .navigation-contacts {
+  display: flex;
+  align-items: center;
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -122,24 +124,9 @@ img {
 .nav-item {
   align-content: center;
 }
-.feedback-phone {
-  width: 10px;
-  height: 16px;
-  fill: var(--primary-text-color);
+.header-icon {
+  fill: currentColor;
   margin-right: 10px;
-}
-.feedback-mail {
-  width: 16px;
-  height: 12px;
-  fill: var(--primary-text-color);
-  margin-right: 10px;
-}
-
-.feedback-phone:hover {
-  fill: var(--accent-color);
-}
-.feedback-mail:hover {
-  fill: var(--accent-color);
 }
 
 .hero {
@@ -208,12 +195,19 @@ img {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-.group-svg {
-  width: 270px;
-  height: 120px;
-  margin-bottom: 30px;
+
+.activity-group-svg {
   background: #f5f4fa;
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  min-height: 120px;
+}
+.group-svg {
+  width: 70px;
+  height: 70px;
 }
 
 .work-route {
@@ -253,7 +247,7 @@ img {
   display: flex;
 }
 .persona-info {
-  padding: 30px 0 16px 0;
+  padding: 30px 0 30px 0;
 }
 .our-team {
   color: var(--title-text-color);
@@ -268,25 +262,31 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
-  fill: #afb1b8;
-}
-.social-link:hover {
-  fill: var(--primary-bg-color);
 }
 
-.social-pages {
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  fill: var(--primary-text-color);
+.social-cards + .social-cards {
+  margin-left: 10px;
 }
-.social-pages:hover {
-  fill: var(--primary-bg-color);
+.social-link-nav {
+  display: block;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.social-link-nav:hover {
   background-color: var(--accent-color);
 }
+.social-pages {
+  width: 22px;
+  height: 22px;
+  fill: #afb1b8;
+}
+.social-link-nav:hover .social-pages {
+  fill: var(--primary-bg-color);
+}
 
-.social-pages + .social-pages {
+.social- + .social-pages {
   margin-left: 10px;
 }
 
@@ -308,32 +308,46 @@ img {
   line-height: 1.2;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-bottom: 16px;
 }
-
 .company {
   display: flex;
   align-items: center;
+  min-height: 92px;
+  justify-content: center;
 }
-.company-logo {
-  width: 170px;
-  height: 92px;
-  fill: #afb1b8;
-  padding-left: 0;
-  padding-right: 0;
+.company-item {
+  padding: 16px 32px;
   border: 1px solid #afb1b8;
+  box-sizing: border-box;
   border-radius: 4px;
 }
-.company-block + .company-block {
+.company-item:hover {
+  border: 1px solid var(--accent-color);
+}
+.company-logo {
+  width: 106px;
+  height: 60px;
+  fill: #afb1b8;
+}
+.company-item + .company-item {
   margin-left: 30px;
 }
 
 .company-logo:hover {
   fill: var(--accent-color);
-  border: 1px solid var(--accent-color);
 }
 .footer {
   background-color: var(--secondary-bg-color);
-  padding: 60px 0;
+  padding: 60px 70px;
+}
+.footer-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-content-pages + .footer-content-pages {
+  margin-left: 70px;
 }
 .logo-footer {
   font-family: Raleway;
@@ -382,17 +396,29 @@ img {
 }
 .social-link-footer {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .social-link-nav-footer {
-  width: 10px;
-  height: 20px;
-  fill: var(--primary-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.social-link-nav-footer:hover {
+  background-color: var(--accent-color);
 }
 .social-pages-footer {
-  width: 44px;
-  height: 44px;
+  width: 22px;
+  height: 22px;
+  fill: var(--primary-bg-color);
 }
-
+.footer-social-pages + .footer-social-pages {
+  margin-left: 10px;
+}
 .filter {
   font-family: inherit;
   background-color: var(--section-bg-our-team-color);
